@@ -56,15 +56,31 @@
 		9C7EA45E24D937600009197F /* RssReaderForiOS */ = {
 			isa = PBXGroup;
 			children = (
+				9C7EA47424D93A360009197F /* Storyboard */,
+				9C7EA47324D93A2B0009197F /* ViewController */,
 				9C7EA45F24D937600009197F /* AppDelegate.swift */,
 				9C7EA46124D937600009197F /* SceneDelegate.swift */,
-				9C7EA46324D937600009197F /* ViewController.swift */,
-				9C7EA46524D937600009197F /* Main.storyboard */,
 				9C7EA46824D937640009197F /* Assets.xcassets */,
 				9C7EA46A24D937640009197F /* LaunchScreen.storyboard */,
 				9C7EA46D24D937640009197F /* Info.plist */,
 			);
 			path = RssReaderForiOS;
+			sourceTree = "<group>";
+		};
+		9C7EA47324D93A2B0009197F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7EA46324D937600009197F /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9C7EA47424D93A360009197F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9C7EA46524D937600009197F /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
