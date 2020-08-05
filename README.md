@@ -10,7 +10,7 @@ Noteの記事をRSSで取得して表示するアプリ
 ### UI 
 
 ### RSS取得方法
-- https://note.com/(著者URL)/の最後にrssをつける → https://note.mu/(著者URL)/rss
+- `https://note.com/(著者URL)/`の最後にrssをつける → `https\://note.mu/(著者URL)/rss`
 - RSSで取得したデータはXML形式なのでクライアントサイドでJSON形式にエンコードする 
 
 ## 参考文献
