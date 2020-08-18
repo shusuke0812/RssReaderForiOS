@@ -13,6 +13,41 @@ Noteの記事をRSSで取得して表示するアプリ
 - `https://note.com/(著者URL)/`の最後にrssをつける → `https\://note.mu/(著者URL)/rss`
 - RSSで取得したデータはXML形式なのでクライアントサイドでJSON形式にエンコードする 
 
+### JSON構造
+- itemsは10要素分取得可能
+```JSON
+{
+  "status": "ok"
+  "feed": {
+    "url": "https://note.com/***/rss"
+    "title": "アカウント名"
+    "link": "https://note.com/***"
+    "author": ""
+    "description": "アカウント説明文"
+    "image": ""
+  }
+  "items": [
+    {
+      "title": "タイトル"
+      "pubDate": "投稿日"
+      "link": "https://note.com/***/n/n90edea869b21"
+      "guid": "https://note.com/***/n/n90edea869b21"
+      "author": ""
+      "thumbnail": ""
+      "description": " <p> 説明文 </p><br><a href="https://note.com/***/n/n90edea869b21">続きをみる</a> "
+      "content": " <p> 説明文 </p><br><a href="https://note.com/***/n/n90edea869b21">続きをみる</a> "
+      "enclosure": {
+      }
+      "categories": [
+      ]
+    },
+    {
+
+    }
+  ]
+}
+```
+
 ## 参考文献
 - 
 
