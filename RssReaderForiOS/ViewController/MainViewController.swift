@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     
     @objc private func refresh(sender: UIRefreshControl) {
         print("DEBUG： リフレッシュが呼ばれました")
+        self.tableView.reloadData()
         self.tableView.refreshControl?.endRefreshing()
     }
 
