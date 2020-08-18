@@ -12,13 +12,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let refreshControl = UIRefreshControl()
+    //private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
+        self.initRefreshControl()
     }
     
     private func initRefreshControl() {
