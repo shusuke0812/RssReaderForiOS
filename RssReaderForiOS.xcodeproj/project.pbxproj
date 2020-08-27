@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3C2AA724F78A8B0083869C /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Articles.swift */; };
 		9C7EA46024D937600009197F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA45F24D937600009197F /* AppDelegate.swift */; };
 		9C7EA46424D937600009197F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA46324D937600009197F /* MainViewController.swift */; };
 		9C7EA46724D937600009197F /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EA46524D937600009197F /* MainViewController.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C3C2AA624F78A8B0083869C /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		9C7EA45C24D937600009197F /* RssReaderForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReaderForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7EA45F24D937600009197F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C7EA46324D937600009197F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C3C2AA524F782650083869C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9C3C2AA624F78A8B0083869C /* Articles.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		9C7EA45324D937600009197F = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		9C7EA45E24D937600009197F /* RssReaderForiOS */ = {
 			isa = PBXGroup;
 			children = (
+				9C3C2AA524F782650083869C /* Entity */,
 				9C7EA47524D93D270009197F /* TableViewCell */,
 				9C7EA47424D93A360009197F /* Storyboard */,
 				9C7EA47324D93A2B0009197F /* ViewController */,
@@ -174,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C7EA46424D937600009197F /* MainViewController.swift in Sources */,
+				9C3C2AA724F78A8B0083869C /* Articles.swift in Sources */,
 				9C7EA47824D93D750009197F /* TableViewCell.swift in Sources */,
 				9C7EA46024D937600009197F /* AppDelegate.swift in Sources */,
 				9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */,
