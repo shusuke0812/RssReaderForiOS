@@ -7,7 +7,11 @@ Noteの記事をRSSで取得して表示するアプリ
 - MacOS Catalina version 10.15.4
 
 ## 概要
-### UI 
+### 要件
+- あるユーザーが書いたnote記事のRSSを取得
+- アカウント名、記事タイトル、記事投稿日、サムネイルをtableViewに表示
+- tableViewのセルをタップしたら記事の本文をwebViewで表示
+- tableViewではキーワードで記事を絞り込むことができる
 
 ### RSS取得方法
 - `https://note.com/(著者URL)/`の最後にrssをつける → `https\://note.mu/(著者URL)/rss`
