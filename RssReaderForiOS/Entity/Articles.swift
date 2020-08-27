@@ -6,8 +6,6 @@
 //  Copyright © 2020 shusuke. All rights reserved.
 //
 
-import UIKit
-
 struct Articles: Codable {
     internal let status: String
     internal let feed: Feed
