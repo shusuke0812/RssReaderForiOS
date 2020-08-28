@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ArticleCellDelegate: class {
+    // デリゲートメソッドを書く（例：お気に入りボタンタップ）
+}
+
 class ArticleCell: UITableViewCell {
+    
+    internal weak var delegate: ArticleCellDelegate?
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
