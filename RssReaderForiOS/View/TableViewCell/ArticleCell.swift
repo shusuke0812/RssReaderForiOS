@@ -34,7 +34,7 @@ class ArticleCell: UITableViewCell {
     
     // セルの再利用時に呼ばれる（例：キャッシュ削除に使う）
     override func prepareForReuse() {
-        <#code#>
+        // 初期化処理等を書く
     }
 }
 
@@ -45,11 +45,14 @@ extension ArticleCell {
         self.thumbnailImageView.clipsToBounds = true
         // ImageViewの角を取る
         self.thumbnailImageView.layer.cornerRadius = 10
+        // 描画比率を設定する
+        self.thumbnailImageView.contentMode = .scaleAspectFill
     }
     /// UIの設定
     /// - Parameters:
     ///   - article: note記事データ
-    internal func setUI(article: Articles) {
-        
+    internal func setUI(article: Article, index: Int) {
+        // 記事タイトル
+        self.titleLabel.text = article.items[index].title
     }
 }
