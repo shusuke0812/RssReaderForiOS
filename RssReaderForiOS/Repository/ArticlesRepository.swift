@@ -51,6 +51,7 @@ extension ArticlesRepository {
             return
         }
         
+        // レスポンスを受け取る
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -61,6 +62,7 @@ extension ArticlesRepository {
                 return
             }
             
+            // JSON型からArticles型にデコードする
             let decoder = JSONDecoder()
             guard let articles = try?decoder.decode(Articles.self, from: data) else {
                 completion(.failure(NetworkError.invalidResponse))
