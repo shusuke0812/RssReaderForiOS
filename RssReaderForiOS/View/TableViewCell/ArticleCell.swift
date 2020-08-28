@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ArticleCellDelegate: class {
-    // デリゲートメソッドを書く（例：お気に入りボタンタップ）
+    // デリゲートメソッドを書く（例：お気に入りボタンタップに使う）
 }
 
 class ArticleCell: UITableViewCell {
@@ -32,4 +32,8 @@ class ArticleCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    // セルの再利用時に呼ばれる（例：キャッシュ削除に使う）
+    override func prepareForReuse() {
+        <#code#>
+    }
 }
