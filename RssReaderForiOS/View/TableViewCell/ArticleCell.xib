@@ -73,6 +73,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="qme-GN-RXQ" id="UQe-Cg-P0e"/>
+                <outlet property="iconImageView" destination="0Uh-XV-Hvz" id="Hxq-Ae-0Xg"/>
+                <outlet property="postDateLabel" destination="Z9W-Nn-Dql" id="P0f-IY-7Sv"/>
+                <outlet property="thumbnailImageView" destination="W9y-4J-Mpy" id="3hl-6h-ujU"/>
+                <outlet property="titleLabel" destination="i8H-h8-wpu" id="Nmn-V9-U5T"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="139.28571428571428"/>
         </tableViewCell>
     </objects>
