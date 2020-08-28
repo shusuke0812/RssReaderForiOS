@@ -45,5 +45,29 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
 extension ArticlesRepository {
     /// Note記事を取得する
     func getArticles(urlString: String, completion: @escaping (Result<Articles, Error>) -> Void) {
+        // URL型に変換できないものは除く
+               guard let url: URL = URL(string: urlString) else {
+                   completion(.failure(NetworkError.unknown))
+                   return
+               }
+               
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(NetworkError.unknown))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            guard let articles = try?decoder.decode(Articles.self, from: data) else {
+                completion(.failure(NetworkError.invalidResponse))
+                return
+            }
+            completion(.success(articles))
+        })
+        task.resume()
     }
 }
