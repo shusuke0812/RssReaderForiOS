@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C3C2AA724F78A8B0083869C /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Articles.swift */; };
+		9C3C2AA724F78A8B0083869C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Article.swift */; };
 		9C3C2AAA24F791960083869C /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA924F791960083869C /* ArticlesRepository.swift */; };
 		9C7EA46024D937600009197F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA45F24D937600009197F /* AppDelegate.swift */; };
 		9C7EA46424D937600009197F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA46324D937600009197F /* MainViewController.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C3C2AA624F78A8B0083869C /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		9C3C2AA624F78A8B0083869C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C3C2AA924F791960083869C /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
 		9C7EA45C24D937600009197F /* RssReaderForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReaderForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7EA45F24D937600009197F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		9C3C2AA524F782650083869C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				9C3C2AA624F78A8B0083869C /* Articles.swift */,
+				9C3C2AA624F78A8B0083869C /* Article.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 			files = (
 				9C3C2AAA24F791960083869C /* ArticlesRepository.swift in Sources */,
 				9C7EA46424D937600009197F /* MainViewController.swift in Sources */,
-				9C3C2AA724F78A8B0083869C /* Articles.swift in Sources */,
+				9C3C2AA724F78A8B0083869C /* Article.swift in Sources */,
 				9C7EA47824D93D750009197F /* ArticleCell.swift in Sources */,
 				9C7EA46024D937600009197F /* AppDelegate.swift in Sources */,
 				9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */,

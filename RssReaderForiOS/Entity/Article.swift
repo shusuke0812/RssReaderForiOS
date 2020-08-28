@@ -6,7 +6,7 @@
 //  Copyright © 2020 shusuke. All rights reserved.
 //
 
-struct Articles: Codable {
+struct Article: Codable {
     internal let status: String
     internal let feed: Feed
     internal let items: [Item]
