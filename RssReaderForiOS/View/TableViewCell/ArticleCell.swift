@@ -8,17 +8,16 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-
+class ArticleCell: UITableViewCell {
+    
+    // セルがロードされた時に一度だけ実行する（初期化など）
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    // セルの選択状態を管理する
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
