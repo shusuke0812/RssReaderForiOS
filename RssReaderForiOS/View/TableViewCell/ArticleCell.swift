@@ -37,3 +37,19 @@ class ArticleCell: UITableViewCell {
         <#code#>
     }
 }
+
+extension ArticleCell {
+    /// サムネイルの初期化
+    private func initThumbnailImageView() {
+        // ImageViewのFrame内に画像を収める
+        self.thumbnailImageView.clipsToBounds = true
+        // ImageViewの角を取る
+        self.thumbnailImageView.layer.cornerRadius = 10
+    }
+    /// UIの設定
+    /// - Parameters:
+    ///   - article: note記事データ
+    internal func setUI(article: Articles) {
+        
+    }
+}
