@@ -9,5 +9,9 @@
 import Foundation
 
 struct CommonData {
-    
+    /// APIのパス
+    struct ApiUrl {
+        // note記事（著者：かっくんさん）
+        internal static let noteArticle: String = "https://note.mu/fromkk/rss"
+    }
 }
