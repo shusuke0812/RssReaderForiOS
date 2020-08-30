@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */; };
+		9C09CF0624FB92BD007E2EB9 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0524FB92BD007E2EB9 /* CommonData.swift */; };
 		9C3C2AA724F78A8B0083869C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Article.swift */; };
 		9C3C2AAA24F791960083869C /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA924F791960083869C /* ArticlesRepository.swift */; };
 		9C7EA46024D937600009197F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA45F24D937600009197F /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		9C09CF0524FB92BD007E2EB9 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		9C3C2AA624F78A8B0083869C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C3C2AA924F791960083869C /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
 		9C7EA45C24D937600009197F /* RssReaderForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReaderForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C09CF0424FB8D37007E2EB9 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				9C09CF0524FB92BD007E2EB9 /* CommonData.swift */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
 		9C3C2AA524F782650083869C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		9C7EA45E24D937600009197F /* RssReaderForiOS */ = {
 			isa = PBXGroup;
 			children = (
+				9C09CF0424FB8D37007E2EB9 /* Static */,
 				9C885BBE24F8EFB500886057 /* ViewModel */,
 				9C885BBD24F8EEC800886057 /* View */,
 				9C3C2AA824F791740083869C /* Repository */,
@@ -220,6 +231,7 @@
 				9C7EA47824D93D750009197F /* ArticleCell.swift in Sources */,
 				9C7EA46024D937600009197F /* AppDelegate.swift in Sources */,
 				9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */,
+				9C09CF0624FB92BD007E2EB9 /* CommonData.swift in Sources */,
 				9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
