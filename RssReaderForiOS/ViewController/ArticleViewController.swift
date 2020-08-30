@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class ArticleViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
