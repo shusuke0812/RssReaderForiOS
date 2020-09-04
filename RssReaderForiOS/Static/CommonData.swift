@@ -11,7 +11,8 @@ import Foundation
 struct CommonData {
     /// APIのパス
     struct ApiUrl {
-        // note記事（著者：かっくんさん）
-        internal static let noteArticle: String = "https://note.mu/fromkk/rss"
+        // note記事（著者：かっくんさん, "https://note.mu/fromkk/rss"）
+        // XML → JSONに変換する（rss2json.com）
+        internal static let noteArticle: String = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnote.mu%2Ffromkk%2Frss"
     }
 }
