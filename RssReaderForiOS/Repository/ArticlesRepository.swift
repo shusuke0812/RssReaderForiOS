@@ -33,7 +33,7 @@ protocol ArticlesRepositoryProtocol {
     /// - Parameters:
     ///   - urlString: RSSのurl
     ///   - completion: 完了時の処理
-    func getArticles(urlString: String, completion: @escaping (Result<Article, Error>) -> Void)
+    func getArticles(urlString: String, completion: @escaping (Result<[Item], Error>) -> Void)
 }
 
 // MARK: - Class
@@ -43,8 +43,9 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
 
 // MARK: - Method
 extension ArticlesRepository {
+    /// GET
     /// Note記事を取得する
-    func getArticles(urlString: String, completion: @escaping (Result<Article, Error>) -> Void) {
+    func getArticles(urlString: String, completion: @escaping (Result<[Item], Error>) -> Void) {
         // URL型に変換できないものは除く
         guard let url: URL = URL(string: urlString) else {
             completion(.failure(NetworkError.unknown))
@@ -68,7 +69,7 @@ extension ArticlesRepository {
                 completion(.failure(NetworkError.invalidResponse))
                 return
             }
-            completion(.success(article))
+            completion(.success(article.items))
         })
         task.resume()
     }
