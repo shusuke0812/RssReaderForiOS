@@ -23,7 +23,8 @@ class ArticleViewModel: NSObject {
 
 extension ArticleViewModel {
     /// note記事を読み込む
-    func loadArticles(completion: (Result<Void, Error>)) {
+    // TODO: 引数どうすべきか？
+    func loadArticles() {
         self.articleRepository.getArticles(urlString: CommonData.ApiUrl.noteArticle, completion: { (response) in
             switch response {
             case .success(let items):

@@ -12,10 +12,14 @@ class ArticleViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //private let refreshControl = UIRefreshControl()
+    // viewModel
+    private var viewModel: ArticleViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // viewModelを初期化
+        self.viewModel = ArticleViewModel(articleRepository: ArticlesRepository())
+        self.showArticles()
         self.initRefreshControl()
     }
     
@@ -30,7 +34,11 @@ class ArticleViewController: UIViewController {
         self.tableView.reloadData()
         self.tableView.refreshControl?.endRefreshing()
     }
-
-
 }
 
+extension ArticleViewController {
+    /// note記事一覧を表示する
+    private func showArticles() {
+        self.viewModel.loadArticles()
+    }
+}

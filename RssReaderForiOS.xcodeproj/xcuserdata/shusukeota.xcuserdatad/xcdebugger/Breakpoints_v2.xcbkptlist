@@ -3,4 +3,70 @@
    uuid = "CE8CC2D7-71F1-4842-9EDF-28E75DC1B851"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8930400A-88E1-4043-AA32-9DE725375420"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RssReaderForiOS/ViewModel/ArticleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loadArticles()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8930400A-88E1-4043-AA32-9DE725375420 - 6618183d80092fcc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;RssReaderForiOS.Item&gt;, Swift.Error&gt;) -&gt; () in RssReaderForiOS.ArticleViewModel.loadArticles() -&gt; ()"
+                  moduleName = "RssReaderForiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shusukeota/MyPortfolio/MyApps/Swift/RssReaderForiOS/RssReaderForiOS/ViewModel/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "8930400A-88E1-4043-AA32-9DE725375420 - 2a5310f69c867da4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;RssReaderForiOS.Item&gt;, Swift.Error&gt;) -&gt; () in RssReaderForiOS.ArticleViewModel.loadArticles() -&gt; ()"
+                  moduleName = "RssReaderForiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shusukeota/MyPortfolio/MyApps/Swift/RssReaderForiOS/RssReaderForiOS/ViewModel/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CACE0BF-AF20-4AF2-A699-64D2765CE5E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RssReaderForiOS/ViewModel/ArticleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "loadArticles()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
