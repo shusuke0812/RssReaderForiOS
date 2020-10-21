@@ -21,6 +21,7 @@ struct Feed: Codable {
 struct Item: Codable {
     // TODO：thumbnailを受け取れるようにする
     internal let title: String
+    internal let pubDate: String
     internal let link: String
     internal let author: String
     internal let description: String
