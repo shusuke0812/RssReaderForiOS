@@ -21,7 +21,7 @@ class ArticleViewController: UIViewController {
         self.initRefreshControl()
         self.viewModel = ArticleViewModel(articleRepository: ArticlesRepository())
         self.setDelegate()
-        self.getArticles()
+        self.loadArticles()
     }
     // MARK: - Action Method
     private func initRefreshControl() {
@@ -45,8 +45,8 @@ extension ArticleViewController {
 
 extension ArticleViewController: ArticleViewModelDelegate {
     /// note記事一覧を取得する
-    private func getArticles() {
-        self.viewModel.getArticles()
+    private func loadArticles() {
+        self.viewModel.loadArticles()
     }
     // note記事を表示する
     func didSuccessGetArticles() {

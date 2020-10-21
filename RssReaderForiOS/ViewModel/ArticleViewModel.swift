@@ -32,7 +32,7 @@ class ArticleViewModel {
 extension ArticleViewModel {
     /// note記事を読み込む
     // TODO: 引数どうすべきか？
-    func getArticles() {
+    func loadArticles() {
         self.articleRepository.getArticles(urlString: CommonData.ApiUrl.noteArticle, completion: { (response) in
             switch response {
             case .success(let items):
