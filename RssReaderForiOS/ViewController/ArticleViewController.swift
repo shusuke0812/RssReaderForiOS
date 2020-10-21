@@ -9,9 +9,8 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+    // BaseView
+    private var baseView: ArticleBaseView { return self.view as! ArticleBaseView }
     // ViewModel
     private var viewModel: ArticleViewModel!
     
@@ -27,12 +26,12 @@ class ArticleViewController: UIViewController {
     private func initRefreshControl() {
         let refresh: UIRefreshControl = UIRefreshControl()
         refresh.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
-        self.tableView.refreshControl = refresh
+        self.baseView.tableView.refreshControl = refresh
     }
     @objc private func refresh(sender: UIRefreshControl) {
         print("DEBUG： リフレッシュが呼ばれました")
-        self.tableView.reloadData()
-        self.tableView.refreshControl?.endRefreshing()
+        self.baseView.tableView.reloadData()
+        self.baseView.tableView.refreshControl?.endRefreshing()
     }
 }
 // MARK: Initialized Method

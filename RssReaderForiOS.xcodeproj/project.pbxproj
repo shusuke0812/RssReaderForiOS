@@ -20,6 +20,7 @@
 		9C7EA47924D93D750009197F /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EA47724D93D750009197F /* ArticleCell.xib */; };
 		9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */; };
 		9C7EA47D24D9456B0009197F /* ArticleDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */; };
+		9CA6F2CB253FEF800043F9E9 /* ArticleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9C7EA47724D93D750009197F /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetailViewController.storyboard; sourceTree = "<group>"; };
+		9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7EA47524D93D270009197F /* TableViewCell */,
+				9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C3C2AAA24F791960083869C /* ArticlesRepository.swift in Sources */,
+				9CA6F2CB253FEF800043F9E9 /* ArticleBaseView.swift in Sources */,
 				9C7EA46424D937600009197F /* ArticleViewController.swift in Sources */,
 				9C3C2AA724F78A8B0083869C /* Article.swift in Sources */,
 				9C7EA47824D93D750009197F /* ArticleCell.swift in Sources */,
