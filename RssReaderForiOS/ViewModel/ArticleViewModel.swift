@@ -16,7 +16,7 @@ protocol ArticleViewModelDelegate: class {
     func didFailedGetArticles(errorMessage: String)
 }
 
-class ArticleViewModel {
+class ArticleViewModel: NSObject {
     /// note記事一覧のリポジトリクラス
     private let articleRepository: ArticlesRepositoryProtocol
     /// note記事一覧
@@ -46,5 +46,15 @@ extension ArticleViewModel {
                 self.delegate?.didFailedGetArticles(errorMessage: "note記事の取得に失敗しました")
             }
         })
+    }
+}
+// MARK: - Table View Method
+extension ArticleViewModel: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        return cell
     }
 }

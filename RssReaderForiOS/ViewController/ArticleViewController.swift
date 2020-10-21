@@ -19,7 +19,7 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         self.initRefreshControl()
         self.viewModel = ArticleViewModel(articleRepository: ArticlesRepository())
-        self.setDelegate()
+        self.setDelegateDataSource()
         self.loadArticles()
     }
     // MARK: - Action Method
@@ -34,11 +34,19 @@ class ArticleViewController: UIViewController {
         self.baseView.tableView.refreshControl?.endRefreshing()
     }
 }
-// MARK: Initialized Method
+extension ArticleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        // TODO： セルをタップした時の処理
+        print("")
+    }
+}
+// MARK: - Initialized Method
 extension ArticleViewController {
     // 通知元のdelegateに通知先である自身のクラスを登録
-    private func setDelegate() {
+    private func setDelegateDataSource() {
         self.viewModel.delegate = self
+        self.baseView.tableView.dataSource = self.viewModel
+        self.baseView.tableView.delegate = self
     }
 }
 

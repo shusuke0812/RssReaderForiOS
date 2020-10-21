@@ -19,6 +19,6 @@ class ArticleBaseView: UIView {
 
 extension ArticleBaseView {
     private func initTableView() {
-        self.tableView.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
+        self.tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: "ArticleCell")
     }
 }

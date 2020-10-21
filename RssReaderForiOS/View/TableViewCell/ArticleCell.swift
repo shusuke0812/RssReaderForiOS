@@ -39,7 +39,7 @@ extension ArticleCell {
     /// - Parameters:
     ///   - article: note記事データ
     private func setUI() {
-        self.titleLabel.text = "-"
-        self.postDateLabel.text = "-"
+        self.titleLabel.text = "タイトル"
+        self.postDateLabel.text = "投稿日"
     }
 }
