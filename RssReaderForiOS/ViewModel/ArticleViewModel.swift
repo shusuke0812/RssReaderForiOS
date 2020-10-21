@@ -8,34 +8,42 @@
 
 import UIKit
 
-class ArticleViewModel: NSObject {
+protocol ArticleViewModelDelegate: class {
+    /// note記事の取得に成功した
+    func didSuccessGetArticles()
+    /// note記事の取得に失敗した
+    /// - Parameter errorMessage: エラーメッセージ
+    func didFailedGetArticles(errorMessage: String)
+}
+
+class ArticleViewModel {
     /// note記事一覧のリポジトリクラス
     private let articleRepository: ArticlesRepositoryProtocol
-    
     /// note記事一覧
-    internal var articles: [Item] = []
+    internal var articles: [Item]?
+    /// デリゲート
+    internal weak var delegate: ArticleViewModelDelegate?
     
     init(articleRepository: ArticlesRepositoryProtocol) {
         self.articleRepository = articleRepository
-        super.init()
     }
 }
 
 extension ArticleViewModel {
     /// note記事を読み込む
     // TODO: 引数どうすべきか？
-    func loadArticles() {
+    func getArticles() {
         self.articleRepository.getArticles(urlString: CommonData.ApiUrl.noteArticle, completion: { (response) in
             switch response {
             case .success(let items):
                 DispatchQueue.main.async {
                     [weak self] in
-                    guard let me = self else { return }
-                    me.articles = items
+                    self?.articles = items
+                    self?.delegate?.didSuccessGetArticles()
                 }
             case .failure(let error):
-                print("DEBUG： 記事の取得に失敗しました")
-                print(error)
+                print("DEBUG： \(error)")
+                self.delegate?.didFailedGetArticles(errorMessage: "note記事の取得に失敗しました")
             }
         })
     }
