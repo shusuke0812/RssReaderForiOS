@@ -51,10 +51,14 @@ extension ArticleViewModel {
 // MARK: - Table View Method
 extension ArticleViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.articles?.count ?? 15
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        if let articles = self.articles {
+            cell.titleLabel.text = articles[indexPath.row].title
+            cell.postDateLabel.text = articles[indexPath.row].pubDate
+        }
         return cell
     }
 }

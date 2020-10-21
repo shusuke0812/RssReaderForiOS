@@ -55,9 +55,8 @@ extension ArticleViewController: ArticleViewModelDelegate {
     private func loadArticles() {
         self.viewModel.loadArticles()
     }
-    // note記事を表示する
     func didSuccessGetArticles() {
-        print("test")
+        self.baseView.tableView.reloadData()
     }
     func didFailedGetArticles(errorMessage: String) {
         print(errorMessage)
