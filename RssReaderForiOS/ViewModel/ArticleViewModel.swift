@@ -20,7 +20,7 @@ class ArticleViewModel: NSObject {
     /// note記事一覧のリポジトリクラス
     private let articleRepository: ArticlesRepositoryProtocol
     /// note記事一覧
-    internal var articles: [Item]?
+    internal var articles: [Item] = []
     /// デリゲート
     internal weak var delegate: ArticleViewModelDelegate?
     
@@ -51,11 +51,11 @@ extension ArticleViewModel {
 // MARK: - Table View Method
 extension ArticleViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.articles?.count ?? 15
+        return self.articles.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        if let articles = self.articles {
+        if !self.articles.isEmpty {
             cell.titleLabel.text = articles[indexPath.row].title
             cell.postDateLabel.text = articles[indexPath.row].pubDate
         }
