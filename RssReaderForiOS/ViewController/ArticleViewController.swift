@@ -35,9 +35,17 @@ class ArticleViewController: UIViewController {
     }
 }
 extension ArticleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        // TODO： セルをタップした時の処理
-        print("")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        // 記事詳細ページへ移動
+        self.transitionArticleDetailPage(article: self.viewModel.articles[indexPath.row])
+    }
+    private func transitionArticleDetailPage(article: Item) {
+        let s = UIStoryboard(name: "ArticleDetailViewController", bundle: nil)
+        let vc = s.instantiateInitialViewController() as! ArticleDetailViewController
+        vc.article = article
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - Initialized Method
