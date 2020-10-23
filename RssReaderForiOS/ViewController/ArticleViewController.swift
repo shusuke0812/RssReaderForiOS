@@ -21,6 +21,7 @@ class ArticleViewController: UIViewController {
         self.viewModel = ArticleViewModel(articleRepository: ArticlesRepository())
         self.setDelegateDataSource()
         self.loadArticles()
+        self.setUI()
     }
     // MARK: - Action Method
     private func initRefreshControl() {
@@ -55,6 +56,11 @@ extension ArticleViewController {
         self.viewModel.delegate = self
         self.baseView.tableView.dataSource = self.viewModel
         self.baseView.tableView.delegate = self
+    }
+    private func setUI() {
+        // ナビゲーションバーの設定
+        self.title = "note記事一覧"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
