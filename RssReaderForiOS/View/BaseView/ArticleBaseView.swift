@@ -10,6 +10,7 @@ import UIKit
 
 class ArticleBaseView: UIView {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()

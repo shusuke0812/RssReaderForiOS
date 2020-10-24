@@ -48,6 +48,7 @@
                             <constraint firstItem="mqe-vA-Kg5" firstAttribute="top" secondItem="0qc-pf-kWN" secondAttribute="bottom" id="zXl-Ut-N8u"/>
                         </constraints>
                         <connections>
+                            <outlet property="searchBar" destination="0qc-pf-kWN" id="g3h-LZ-lx9"/>
                             <outlet property="tableView" destination="mqe-vA-Kg5" id="gCW-rE-s7O"/>
                         </connections>
                     </view>
