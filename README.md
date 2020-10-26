@@ -19,11 +19,11 @@ noteと連携することでお知らせ投稿用の管理画面を作らずに�
 
 ### 設計パターン
 - MVVM  
-<img width="400" src="https://user-images.githubusercontent.com/33107697/91534737-02fb5200-e94d-11ea-9907-c55bdf835148.png">
+<img width="400" src="https://user-images.githubusercontent.com/33107697/97147484-ee9ccf80-17ac-11eb-8bcb-f38494cd48fd.png">
   
 ### RSS取得方法
 - `https://note.com/(著者URL)/`の最後にrssをつける → `https://note.mu/(著者URL)/rss`
-- RSSで取得したデータはXML形式なのでクライアントサイドでJSON形式にエンコードする 
+- RSSで取得するデータはXML形式なのでサーバーサイド（[既存API](https://rss2json.com/)）でJSON形式にエンコードしたものを取得する 
 
 ### JSON構造
 - itemsは10要素分取得可能
