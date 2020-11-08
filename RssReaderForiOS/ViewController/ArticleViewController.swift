@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class ArticleViewController: UIViewController {
     // BaseView
@@ -92,10 +93,12 @@ extension ArticleViewController: UISearchBarDelegate {
 extension ArticleViewController: ArticleViewModelDelegate {
     /// note記事一覧を取得する
     private func loadArticles() {
+        HUD.show(.progress)
         self.viewModel.loadArticles()
     }
     func didSuccessGetArticles() {
         self.baseView.tableView.reloadData()
+        HUD.hide()
     }
     func didFailedGetArticles(errorMessage: String) {
         print(errorMessage)
