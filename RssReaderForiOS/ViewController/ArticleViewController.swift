@@ -89,6 +89,16 @@ extension ArticleViewController: UISearchBarDelegate {
         // キーボードを閉じる
         self.baseView.searchBar.endEditing(true)
     }
+    // 検索バーの編集時の処理
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        // キャンセルボタンを設定
+        self.baseView.searchBar.setShowsCancelButton(true, animated: true)
+    }
+    // 検索バーのキャンセルボタン押下時の処理
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.viewModel.loadArticles()
+        self.baseView.searchBar.setShowsCancelButton(false, animated: true)
+    }
 }
 extension ArticleViewController: ArticleViewModelDelegate {
     /// note記事一覧を取得する
