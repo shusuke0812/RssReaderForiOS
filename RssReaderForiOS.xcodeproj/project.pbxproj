@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CFC3C881D600391A1C093FA /* Pods_RssReaderForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */; };
 		9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */; };
 		9C09CF0624FB92BD007E2EB9 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0524FB92BD007E2EB9 /* CommonData.swift */; };
 		9C3C2AA724F78A8B0083869C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Article.swift */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		816431B5A04C14F63818C2F2 /* Pods-RssReaderForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RssReaderForiOS.debug.xcconfig"; path = "Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		87A0D81EBB20883FBCBDBDD9 /* Pods-RssReaderForiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RssReaderForiOS.release.xcconfig"; path = "Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS.release.xcconfig"; sourceTree = "<group>"; };
 		9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		9C09CF0524FB92BD007E2EB9 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		9C3C2AA624F78A8B0083869C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetailViewController.storyboard; sourceTree = "<group>"; };
 		9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBaseView.swift; sourceTree = "<group>"; };
+		B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RssReaderForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFC3C881D600391A1C093FA /* Pods_RssReaderForiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,8 @@
 			children = (
 				9C7EA45E24D937600009197F /* RssReaderForiOS */,
 				9C7EA45D24D937600009197F /* Products */,
+				CB36A2F080A953966F660DF3 /* Pods */,
+				C9E285AFB7F37AF409C887BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +170,24 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		C9E285AFB7F37AF409C887BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB36A2F080A953966F660DF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				816431B5A04C14F63818C2F2 /* Pods-RssReaderForiOS.debug.xcconfig */,
+				87A0D81EBB20883FBCBDBDD9 /* Pods-RssReaderForiOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7EA47024D937640009197F /* Build configuration list for PBXNativeTarget "RssReaderForiOS" */;
 			buildPhases = (
+				036A54597F95211972F0D19C /* [CP] Check Pods Manifest.lock */,
 				9C7EA45824D937600009197F /* Sources */,
 				9C7EA45924D937600009197F /* Frameworks */,
 				9C7EA45A24D937600009197F /* Resources */,
+				17D60F847A717076D7CD1042 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +257,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		036A54597F95211972F0D19C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RssReaderForiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17D60F847A717076D7CD1042 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C7EA45824D937600009197F /* Sources */ = {
@@ -386,6 +455,7 @@
 		};
 		9C7EA47124D937640009197F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 816431B5A04C14F63818C2F2 /* Pods-RssReaderForiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -404,6 +474,7 @@
 		};
 		9C7EA47224D937640009197F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A0D81EBB20883FBCBDBDD9 /* Pods-RssReaderForiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
