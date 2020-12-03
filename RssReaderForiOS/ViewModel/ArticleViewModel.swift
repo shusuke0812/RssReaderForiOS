@@ -56,8 +56,7 @@ extension ArticleViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         if !self.articles.isEmpty {
-            cell.titleLabel.text = articles[indexPath.row].title
-            cell.postDateLabel.text = articles[indexPath.row].pubDate
+            cell.setUI(article: articles[indexPath.row])
         }
         return cell
     }

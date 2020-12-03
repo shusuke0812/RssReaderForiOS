@@ -33,13 +33,17 @@ class ArticleCell: UITableViewCell {
         // 初期化処理等を書く
     }
 }
-
+// MARK: - Setting UI Method
 extension ArticleCell {
     /// UIの初期設定
-    /// - Parameters:
-    ///   - article: note記事データ
     private func initUI() {
         self.titleLabel.text = "タイトル"
         self.postDateLabel.text = "投稿日"
+    }
+    /// UIの設定
+    /// - `Parameter article: note記事データ
+    func setUI(article: Item) {
+        self.titleLabel.text = article.title
+        self.postDateLabel.text = article.pubDate
     }
 }
