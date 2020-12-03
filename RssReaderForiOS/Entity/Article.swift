@@ -17,6 +17,14 @@ struct Feed: Codable {
     internal let title: String
     internal let link: String
     internal let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case url = "url"
+        case title = "title"
+        case link = "link"
+        case description = "description"
+    }
+    
 }
 struct Item: Codable {
     // TODO：thumbnailを受け取れるようにする
@@ -25,4 +33,20 @@ struct Item: Codable {
     internal let link: String
     internal let author: String
     internal let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case pubDate = "pubDate"
+        case author = "author"
+        case link = "link"
+        case description = "description"
+    }
+    
+    init(title: String, pubDate: String, link: String, author: String, description: String) {
+        self.title = title
+        self.pubDate = pubDate
+        self.link = link
+        self.author = author
+        self.description = description
+    }
 }
