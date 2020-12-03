@@ -22,7 +22,7 @@ class ArticleCell: UITableViewCell {
     // セルがロードされた時に一度だけ実行する（初期化など）
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setUI()
+        self.initUI()
     }
     // セルの選択状態を管理する
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,10 +35,10 @@ class ArticleCell: UITableViewCell {
 }
 
 extension ArticleCell {
-    /// UIの設定
+    /// UIの初期設定
     /// - Parameters:
     ///   - article: note記事データ
-    private func setUI() {
+    private func initUI() {
         self.titleLabel.text = "タイトル"
         self.postDateLabel.text = "投稿日"
     }
