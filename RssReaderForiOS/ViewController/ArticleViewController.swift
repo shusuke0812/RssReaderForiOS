@@ -65,12 +65,20 @@ extension ArticleViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
+// MARK: - API Method
+extension ArticleViewController {
+    /// note記事一覧を取得する
+    private func loadArticles() {
+        HUD.show(.progress)
+        self.viewModel.loadArticles()
+    }
+}
 // MARK: - Delegate Method
 extension ArticleViewController: UISearchBarDelegate {
     // 検索バーの値を取得する
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText: String = searchBar.text else { return }
-        // 検索バーがから文字の時は処理を抜ける
+        // 検索バーが空文字の時は処理を抜ける
         if searchText.isEmpty {
             // キーボードを閉じる
             self.baseView.searchBar.endEditing(true)
@@ -100,12 +108,8 @@ extension ArticleViewController: UISearchBarDelegate {
         self.baseView.searchBar.setShowsCancelButton(false, animated: true)
     }
 }
+// MARK: - ViewModel Delegate Method
 extension ArticleViewController: ArticleViewModelDelegate {
-    /// note記事一覧を取得する
-    private func loadArticles() {
-        HUD.show(.progress)
-        self.viewModel.loadArticles()
-    }
     func didSuccessGetArticles() {
         self.baseView.tableView.reloadData()
         HUD.hide()
