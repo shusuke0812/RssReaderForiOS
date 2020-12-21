@@ -116,5 +116,6 @@ extension ArticleViewController: ArticleViewModelDelegate {
     }
     func didFailedGetArticles(errorMessage: String) {
         print(errorMessage)
+        HUD.hide()
     }
 }
