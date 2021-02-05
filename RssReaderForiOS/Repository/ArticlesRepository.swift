@@ -8,52 +8,21 @@
 
 import Foundation
 
-/// ネットワークエラー
-enum NetworkError: Error {
-    case invalidURL         // 不正なURL
-    case invalidResponse    // 不正なレスポンス
-    case unknown            // 想定外エラー
-    func description() -> String {
-        switch self {
-        case .invalidURL: return "DEBUG： 不正なURLです"
-        case .invalidResponse: return "DEBUG： 不正なレスポンスです"
-        case .unknown: return "DEBUG： レスポンスに失敗しました"
-        }
-    }
-}
-/// クライアントエラー
-enum ClientError: Error {
-    case parseFailed        // パース失敗
-    case unknown            // 想定外エラー
-}
-
-// MARK: - Protocol
 protocol ArticlesRepositoryProtocol {
     /// Note記事を取得する
     /// - Parameters:
-    ///   - urlString: RSSのurl
+    ///   - request: note記事のリクエスト
     ///   - completion: 完了時の処理
-    func getArticles(urlString: String, completion: @escaping (Result<[Item], Error>) -> Void)
+    func getArticles(request: URLRequest, completion: @escaping (Result<[Item], Error>) -> Void)
 }
-
-// MARK: - Class
 /// Note記事のRSSを取得するクラス
 class ArticlesRepository: ArticlesRepositoryProtocol {
 }
 
-// MARK: - Method
+// MARK: - API Method
 extension ArticlesRepository {
-    /// GET
-    /// Note記事を取得する
-    func getArticles(urlString: String, completion: @escaping (Result<[Item], Error>) -> Void) {
-        // URL型に変換できないものは除く
-        guard let url: URL = URL(string: urlString) else {
-            completion(.failure(NetworkError.unknown))
-            return
-        }
-        
-        // レスポンスを受け取る
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+    func getArticles(request: URLRequest, completion: @escaping (Result<[Item], Error>) -> Void) {
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -62,7 +31,6 @@ extension ArticlesRepository {
                 completion(.failure(NetworkError.unknown))
                 return
             }
-            
             // JSON型からArticles型にデコードする
             let decoder = JSONDecoder()
             guard let article = try?decoder.decode(Article.self, from: data) else {

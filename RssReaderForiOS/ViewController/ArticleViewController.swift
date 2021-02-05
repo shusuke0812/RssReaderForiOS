@@ -10,12 +10,14 @@ import UIKit
 import PKHUD
 
 class ArticleViewController: UIViewController {
-    // BaseView
+    /// BaseView
     private var baseView: ArticleBaseView { return self.view as! ArticleBaseView }
-    // ViewModel
+    /// ViewModel
     private var viewModel: ArticleViewModel!
+    /// note記事取得のリクエスト
+    private var request: URLRequest { JsonArticleRequest(noteRss: Common.Api.noteRss).buildURLRequest() }
     
-    // MARK: - Lifecycle
+    // MARK: - Lifecycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initRefreshControl()
@@ -32,7 +34,7 @@ class ArticleViewController: UIViewController {
     }
     @objc private func refresh(sender: UIRefreshControl) {
         print("DEBUG： リフレッシュが呼ばれました")
-        self.viewModel.loadArticles()
+        self.viewModel.loadArticles(request: self.request)
         self.baseView.tableView.refreshControl?.endRefreshing()
     }
 }
@@ -70,10 +72,10 @@ extension ArticleViewController {
     /// note記事一覧を取得する
     private func loadArticles() {
         HUD.show(.progress)
-        self.viewModel.loadArticles()
+        self.viewModel.loadArticles(request: request)
     }
 }
-// MARK: - Delegate Method
+// MARK: - UISearchBar Delegate Method
 extension ArticleViewController: UISearchBarDelegate {
     // 検索バーの値を取得する
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -104,15 +106,16 @@ extension ArticleViewController: UISearchBarDelegate {
     }
     // 検索バーのキャンセルボタン押下時の処理
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.viewModel.loadArticles()
         self.baseView.searchBar.setShowsCancelButton(false, animated: true)
     }
 }
 // MARK: - ViewModel Delegate Method
 extension ArticleViewController: ArticleViewModelDelegate {
     func didSuccessGetArticles() {
-        self.baseView.tableView.reloadData()
-        HUD.hide()
+        DispatchQueue.main.async { [weak self] in
+            self?.baseView.tableView.reloadData()
+            HUD.hide()
+        }
     }
     func didFailedGetArticles(errorMessage: String) {
         print(errorMessage)

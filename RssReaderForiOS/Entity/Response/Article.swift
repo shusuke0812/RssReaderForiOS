@@ -7,39 +7,39 @@
 //
 
 struct Article: Codable {
-    internal let status: String
-    internal let feed: Feed
-    internal let items: [Item]
+    let status: String
+    let feed: Feed
+    let items: [Item]
 }
 struct Feed: Codable {
     // TODO：imageを受け取れるようにする
-    internal let url: String
-    internal let title: String
-    internal let link: String
-    internal let description: String
+    let url: String
+    let title: String
+    let link: String
+    let description: String
     
     enum CodingKeys: String, CodingKey {
-        case url = "url"
-        case title = "title"
-        case link = "link"
-        case description = "description"
+        case url
+        case title
+        case link
+        case description
     }
     
 }
 struct Item: Codable {
     // TODO：thumbnailを受け取れるようにする
-    internal let title: String
-    internal let pubDate: String
-    internal let link: String
-    internal let author: String
-    internal let description: String
+    let title: String
+    let pubDate: String
+    let link: String
+    let author: String
+    let description: String
     
     enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case pubDate = "pubDate"
-        case author = "author"
-        case link = "link"
-        case description = "description"
+        case title
+        case pubDate
+        case author
+        case link
+        case description
     }
     
     init(title: String, pubDate: String, link: String, author: String, description: String) {

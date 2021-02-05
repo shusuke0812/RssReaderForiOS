@@ -32,15 +32,12 @@ class ArticleViewModel: NSObject {
 extension ArticleViewModel {
     /// note記事を読み込む
     // TODO: 引数どうすべきか？
-    func loadArticles() {
-        self.articleRepository.getArticles(urlString: CommonData.ApiUrl.noteArticle, completion: { (response) in
+    func loadArticles(request: URLRequest) {
+        self.articleRepository.getArticles(request: request, completion: { (response) in
             switch response {
             case .success(let items):
-                DispatchQueue.main.async {
-                    [weak self] in
-                    self?.articles = items
-                    self?.delegate?.didSuccessGetArticles()
-                }
+                self.articles = items
+                self.delegate?.didSuccessGetArticles()
             case .failure(let error):
                 print("DEBUG： \(error)")
                 self.delegate?.didFailedGetArticles(errorMessage: "note記事の取得に失敗しました")

@@ -25,7 +25,7 @@ class ArticleDetailViewController: UIViewController {
         self.setProgressView()
     }
 }
-
+// MARK: - Private Method
 extension ArticleDetailViewController {
     private func setUI() {
         // ナビゲーションバーの設定
@@ -40,13 +40,13 @@ extension ArticleDetailViewController {
         guard let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height else { return }
         self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: navigationBarHeight, width: self.view.frame.size.width, height: 0.0))
         self.navigationController?.navigationBar.addSubview(progressView)
-        self.webView.addObserver(self, forKeyPath: CommonData.ProgressViewStatus.isLoading, options: .new, context: nil)
-        self.webView.addObserver(self, forKeyPath: CommonData.ProgressViewStatus.estimatedProgress, options: .new, context: nil)
+        self.webView.addObserver(self, forKeyPath: Common.ProgressViewStatus.isLoading, options: .new, context: nil)
+        self.webView.addObserver(self, forKeyPath: Common.ProgressViewStatus.estimatedProgress, options: .new, context: nil)
     }
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let keyPath = keyPath else { return }
         switch keyPath {
-            case CommonData.ProgressViewStatus.isLoading:
+            case Common.ProgressViewStatus.isLoading:
                 if self.webView.isLoading {
                     self.progressView.alpha = 1.0
                     self.progressView.setProgress(0.1, animated: true)
@@ -57,7 +57,7 @@ extension ArticleDetailViewController {
                         self.progressView.setProgress(0.0, animated: false)
                     })
                 }
-            case CommonData.ProgressViewStatus.estimatedProgress:
+            case Common.ProgressViewStatus.estimatedProgress:
                 self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
             default:
                 break

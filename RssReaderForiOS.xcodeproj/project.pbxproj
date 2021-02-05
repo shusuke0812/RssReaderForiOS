@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7CFC3C881D600391A1C093FA /* Pods_RssReaderForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */; };
 		9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */; };
-		9C09CF0624FB92BD007E2EB9 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0524FB92BD007E2EB9 /* CommonData.swift */; };
+		9C09CF0624FB92BD007E2EB9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09CF0524FB92BD007E2EB9 /* Common.swift */; };
 		9C3C2AA724F78A8B0083869C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA624F78A8B0083869C /* Article.swift */; };
 		9C3C2AAA24F791960083869C /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C2AA924F791960083869C /* ArticlesRepository.swift */; };
 		9C7EA46024D937600009197F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA45F24D937600009197F /* AppDelegate.swift */; };
@@ -21,6 +21,8 @@
 		9C7EA47924D93D750009197F /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EA47724D93D750009197F /* ArticleCell.xib */; };
 		9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */; };
 		9C7EA47D24D9456B0009197F /* ArticleDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */; };
+		9C9B0A2325CCFA2600DE74B1 /* RssConvertedJsonAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B0A2225CCFA2600DE74B1 /* RssConvertedJsonAPIRequest.swift */; };
+		9C9B0A2825CD02A100DE74B1 /* JsonArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B0A2725CD02A100DE74B1 /* JsonArticleRequest.swift */; };
 		9CA6F2CB253FEF800043F9E9 /* ArticleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +30,7 @@
 		816431B5A04C14F63818C2F2 /* Pods-RssReaderForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RssReaderForiOS.debug.xcconfig"; path = "Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		87A0D81EBB20883FBCBDBDD9 /* Pods-RssReaderForiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RssReaderForiOS.release.xcconfig"; path = "Target Support Files/Pods-RssReaderForiOS/Pods-RssReaderForiOS.release.xcconfig"; sourceTree = "<group>"; };
 		9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		9C09CF0524FB92BD007E2EB9 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
+		9C09CF0524FB92BD007E2EB9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9C3C2AA624F78A8B0083869C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C3C2AA924F791960083869C /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
 		9C7EA45C24D937600009197F /* RssReaderForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReaderForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +44,8 @@
 		9C7EA47724D93D750009197F /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetailViewController.storyboard; sourceTree = "<group>"; };
+		9C9B0A2225CCFA2600DE74B1 /* RssConvertedJsonAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssConvertedJsonAPIRequest.swift; sourceTree = "<group>"; };
+		9C9B0A2725CD02A100DE74B1 /* JsonArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonArticleRequest.swift; sourceTree = "<group>"; };
 		9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBaseView.swift; sourceTree = "<group>"; };
 		B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RssReaderForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,7 +65,7 @@
 		9C09CF0424FB8D37007E2EB9 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				9C09CF0524FB92BD007E2EB9 /* CommonData.swift */,
+				9C09CF0524FB92BD007E2EB9 /* Common.swift */,
 			);
 			path = Static;
 			sourceTree = "<group>";
@@ -69,7 +73,8 @@
 		9C3C2AA524F782650083869C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				9C3C2AA624F78A8B0083869C /* Article.swift */,
+				9C9B0A2025CCF85C00DE74B1 /* Response */,
+				9C9B0A1F25CCF85400DE74B1 /* Request */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -162,6 +167,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9C9B0A1F25CCF85400DE74B1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				9C9B0A2225CCFA2600DE74B1 /* RssConvertedJsonAPIRequest.swift */,
+				9C9B0A2725CD02A100DE74B1 /* JsonArticleRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		9C9B0A2025CCF85C00DE74B1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9C3C2AA624F78A8B0083869C /* Article.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		9CB7D6012540505100D57801 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +206,6 @@
 				816431B5A04C14F63818C2F2 /* Pods-RssReaderForiOS.debug.xcconfig */,
 				87A0D81EBB20883FBCBDBDD9 /* Pods-RssReaderForiOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -312,7 +333,9 @@
 				9C7EA47824D93D750009197F /* ArticleCell.swift in Sources */,
 				9C7EA46024D937600009197F /* AppDelegate.swift in Sources */,
 				9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */,
-				9C09CF0624FB92BD007E2EB9 /* CommonData.swift in Sources */,
+				9C09CF0624FB92BD007E2EB9 /* Common.swift in Sources */,
+				9C9B0A2325CCFA2600DE74B1 /* RssConvertedJsonAPIRequest.swift in Sources */,
+				9C9B0A2825CD02A100DE74B1 /* JsonArticleRequest.swift in Sources */,
 				9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
