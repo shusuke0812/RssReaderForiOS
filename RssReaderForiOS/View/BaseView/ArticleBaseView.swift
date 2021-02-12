@@ -16,6 +16,7 @@ struct ArticleBaseView: View {
     /// ViewModelの値を監視するObserver
     class DataSource: ObservableObject {
         @Published var articles: [Item] = []
+        @Published var listIndex: Int = 0
     }
     /// デリゲート
     weak var delegate: ArticleBaseViewDelegate?
@@ -34,6 +35,11 @@ struct ArticleBaseView: View {
             List(dataSource.articles.indices, id: \.self) { i in
                 ArticleCell(title: dataSource.articles[i].title,
                             pubDate: dataSource.articles[i].pubDate)
+                    .onTapGesture {
+                        print("DEBUG: List Index = \(i) がタップされました", i)
+                        dataSource.listIndex = i
+                        self.delegate?.didTapCell()
+                    }
             }
         }
     }
