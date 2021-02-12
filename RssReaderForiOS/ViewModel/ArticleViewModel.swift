@@ -20,7 +20,7 @@ class ArticleViewModel: NSObject {
     /// note記事一覧のリポジトリクラス
     private let articleRepository: ArticlesRepositoryProtocol
     /// note記事一覧
-    internal var articles: [Item] = []
+    var articles: [Item] = []
     /// デリゲート
     internal weak var delegate: ArticleViewModelDelegate?
     
@@ -43,18 +43,5 @@ extension ArticleViewModel {
                 self.delegate?.didFailedGetArticles(errorMessage: "note記事の取得に失敗しました")
             }
         })
-    }
-}
-// MARK: - Table View Method
-extension ArticleViewModel: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.articles.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        if !self.articles.isEmpty {
-            cell.setUI(article: articles[indexPath.row])
-        }
-        return cell
     }
 }
