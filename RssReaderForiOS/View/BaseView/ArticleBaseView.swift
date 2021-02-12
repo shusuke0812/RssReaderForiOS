@@ -6,20 +6,41 @@
 //  Copyright © 2020 shusuke. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
-class ArticleBaseView: UIView {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.initTableView()
-    }
+protocol ArticleBaseViewDelegate: AnyObject {
+    /// セルをタップした時の処理
+    func didTapCell()
 }
-
-extension ArticleBaseView {
-    private func initTableView() {
-        self.tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: "ArticleCell")
+struct ArticleBaseView: View {
+    /// ViewModelの値を監視するObserver
+    class DataSource: ObservableObject {
+        @Published var articles: [Item] = []
+        @Published var listIndex: Int = 0
+    }
+    /// デリゲート
+    weak var delegate: ArticleBaseViewDelegate?
+    /// ViewModelの値を検知して更新する
+    @ObservedObject var dataSource: DataSource
+    /// テキストフィールドの値
+    @State var keyword = ""
+    /// テキストフィールド余白
+    private let textFieldPaddingSize: CGFloat = 15.0
+    
+    var body: some View {
+        VStack {
+            TextField("絞り込み検索", text: $keyword)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(self.textFieldPaddingSize)
+            List(dataSource.articles.indices, id: \.self) { i in
+                ArticleCell(title: dataSource.articles[i].title,
+                            pubDate: dataSource.articles[i].pubDate)
+                    .onTapGesture {
+                        print("DEBUG: List Index = \(i) がタップされました", i)
+                        dataSource.listIndex = i
+                        self.delegate?.didTapCell()
+                    }
+            }
+        }
     }
 }

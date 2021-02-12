@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftUI
 import PKHUD
 
 class ArticleViewController: UIViewController {
-    /// BaseView
-    private var baseView: ArticleBaseView { return self.view as! ArticleBaseView }
+    /// BaseViewDataSource
+    private var dataSource: ArticleBaseView.DataSource = .init()
     /// ViewModel
     private var viewModel: ArticleViewModel!
     /// note記事取得のリクエスト
@@ -25,31 +26,18 @@ class ArticleViewController: UIViewController {
         self.setDelegateDataSource()
         self.loadArticles()
         self.setNavigationItem()
+        self.setView()
     }
     // MARK: - Action Method
     private func initRefreshControl() {
         let refresh: UIRefreshControl = UIRefreshControl()
         refresh.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
-        self.baseView.tableView.refreshControl = refresh
+        //self.baseView.tableView.refreshControl = refresh
     }
     @objc private func refresh(sender: UIRefreshControl) {
         print("DEBUG： リフレッシュが呼ばれました")
         self.viewModel.loadArticles(request: self.request)
-        self.baseView.tableView.refreshControl?.endRefreshing()
-    }
-}
-extension ArticleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // セルの選択を解除
-        tableView.deselectRow(at: indexPath, animated: true)
-        // 記事詳細ページへ移動
-        self.transitionArticleDetailPage(article: self.viewModel.articles[indexPath.row])
-    }
-    private func transitionArticleDetailPage(article: Item) {
-        let s = UIStoryboard(name: "ArticleDetailViewController", bundle: nil)
-        let vc = s.instantiateInitialViewController() as! ArticleDetailViewController
-        vc.article = article
-        self.navigationController?.pushViewController(vc, animated: true)
+        //self.baseView.tableView.refreshControl?.endRefreshing()
     }
 }
 // MARK: - Initialized Method
@@ -57,14 +45,28 @@ extension ArticleViewController {
     // 通知元のdelegateに通知先である自身のクラスを登録
     private func setDelegateDataSource() {
         self.viewModel.delegate = self
-        self.baseView.tableView.dataSource = self.viewModel
-        self.baseView.tableView.delegate = self
-        self.baseView.searchBar.delegate = self
     }
     private func setNavigationItem() {
         // ナビゲーションバーの設定
         self.title = "note記事一覧"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    private func setView() {
+        let rootView = ArticleBaseView(delegate: self, dataSource: dataSource, keyword: "")
+        let hostingVC = UIHostingController(rootView: rootView)
+        self.addChild(hostingVC)
+        hostingVC.view.frame = self.view.bounds
+        self.view.addSubview(hostingVC.view)
+        hostingVC.didMove(toParent: self)
+    }
+}
+// MARK: - Page Transition Method
+extension ArticleViewController {
+    private func transitionArticleDetailPage(article: Item) {
+        let s = UIStoryboard(name: "ArticleDetailViewController", bundle: nil)
+        let vc = s.instantiateInitialViewController() as! ArticleDetailViewController
+        vc.article = article
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - API Method
@@ -75,50 +77,22 @@ extension ArticleViewController {
         self.viewModel.loadArticles(request: request)
     }
 }
-// MARK: - UISearchBar Delegate Method
-extension ArticleViewController: UISearchBarDelegate {
-    // 検索バーの値を取得する
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText: String = searchBar.text else { return }
-        // 検索バーが空文字の時は処理を抜ける
-        if searchText.isEmpty {
-            // キーボードを閉じる
-            self.baseView.searchBar.endEditing(true)
-            return
-        }
-        var newArticles: [Item] = []
-        // 検索バーの文字列でtableViewをフィルタする
-        self.viewModel.articles.forEach ({
-            if $0.title.contains(searchText) {
-                newArticles.insert($0, at: 0)
-            }
-        })
-        self.viewModel.articles = newArticles
-        // tableViewを更新
-        self.baseView.tableView.reloadData()
-        // キーボードを閉じる
-        self.baseView.searchBar.endEditing(true)
-    }
-    // 検索バーの編集時の処理
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        // キャンセルボタンを設定
-        self.baseView.searchBar.setShowsCancelButton(true, animated: true)
-    }
-    // 検索バーのキャンセルボタン押下時の処理
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.baseView.searchBar.setShowsCancelButton(false, animated: true)
-    }
-}
 // MARK: - ViewModel Delegate Method
 extension ArticleViewController: ArticleViewModelDelegate {
     func didSuccessGetArticles() {
-        DispatchQueue.main.async { [weak self] in
-            self?.baseView.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.dataSource.articles = self.viewModel.articles
             HUD.hide()
         }
     }
     func didFailedGetArticles(errorMessage: String) {
         print(errorMessage)
         HUD.hide()
+    }
+}
+// MARK: - BaseView Delegate Method
+extension ArticleViewController: ArticleBaseViewDelegate {
+    func didTapCell() {
+        self.transitionArticleDetailPage(article: self.viewModel.articles[dataSource.listIndex])
     }
 }
