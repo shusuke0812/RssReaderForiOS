@@ -6,38 +6,27 @@
 //  Copyright © 2020 shusuke. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
-protocol ArticleCellDelegate: class {
-    // デリゲートメソッドを書く（例：お気に入りボタンタップに使う）
-}
-
-class ArticleCell: UITableViewCell {
+struct ArticleCell: View {
+    /// 記事タイトル
+    var title: String
+    /// 記事発行日
+    var pubDate: String
     
-    internal weak var delegate: ArticleCellDelegate?
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var postDateLabel: UILabel!
-    
-    // セルがロードされた時に一度だけ実行する（初期化など）
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    // セルの選択状態を管理する
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    // セルの再利用時に呼ばれる（例：キャッシュ削除に使う）
-    override func prepareForReuse() {
-        // 初期化処理等を書く
+    var body: some View {
+        VStack {
+            Text(self.title)
+            Text(self.pubDate)
+        }
     }
 }
-// MARK: - Setting UI Method
-extension ArticleCell {
-    /// UIの設定
-    /// - `Parameter article: note記事データ
-    func setUI(article: Item) {
-        self.titleLabel.text = article.title
-        self.postDateLabel.text = article.pubDate
+// MARK: - Live Preview
+struct ArticleCell_Previews: PreviewProvider {
+    static var previews: some View {
+        ArticleCell(
+            title: "Note記事のタイトル",
+            pubDate: "2020/2/4"
+        )
     }
 }
