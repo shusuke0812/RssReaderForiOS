@@ -1,4 +1,4 @@
-noteの記事をRSSで取得して表示するアプリ
+SwiftUIとUIKitを用いた「noteの記事をRSSで取得して表示するアプリ」
 ====
 　
 ## 開発環境
@@ -13,13 +13,14 @@ noteと連携することでお知らせ投稿用の管理画面を作らずに�
 
 ### 要件
 - [x] あるユーザーが書いたnote記事のRSSを取得
-- [x] 記事タイトル、記事投稿日をTableViewに表示
-- [x] TableViewのセルをタップしたら記事の本文をwebViewで表示
-- [x] TableViewではキーワードで記事を絞り込むことができる
+- [x] 記事タイトル、記事投稿日をListViewに表示
+- [x] ListViewのセルをタップしたら記事の本文をwebViewで表示
+- [ ] ListViewではキーワードで記事を絞り込むことができる
 
 ### 設計パターン
-- MVVM  
-<img width="400" src="https://user-images.githubusercontent.com/33107697/97147484-ee9ccf80-17ac-11eb-8bcb-f38494cd48fd.png">
+- MVVM + SwiftUI
+- ViewのみSwiftUIを使用し、それ以外はUIKitで構成（ただし、詳細画面のWebViewはUIKit）
+<img width="600" src="https://user-images.githubusercontent.com/33107697/107774590-8cc79c00-6d82-11eb-8377-1ef7202e8163.png">
   
 ### RSS取得方法
 - `https://note.com/(著者URL)/`の最後にrssをつける → `https://note.mu/(著者URL)/rss`
@@ -62,4 +63,5 @@ noteと連携することでお知らせ投稿用の管理画面を作らずに�
 
 ## 参考文献
 - 田中賢治、iOSアプリ設計パターン入門、2018年12月26日 初版第1刷発行、pp.111-126
+- 金田浩明、SwiftUI徹底入門、2019年12月30日 初版第1刷発行
 
