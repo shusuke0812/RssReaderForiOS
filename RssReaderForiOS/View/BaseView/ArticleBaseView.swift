@@ -23,10 +23,14 @@ struct ArticleBaseView: View {
     @ObservedObject var dataSource: DataSource
     /// テキストフィールドの値
     @State var keyword = ""
+    /// テキストフィールド余白
+    private let textFieldPaddingSize: CGFloat = 15.0
     
     var body: some View {
         VStack {
             TextField("絞り込み検索", text: $keyword)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(self.textFieldPaddingSize)
             List(dataSource.articles.indices, id: \.self) { i in
                 ArticleCell(title: dataSource.articles[i].title,
                             pubDate: dataSource.articles[i].pubDate)
