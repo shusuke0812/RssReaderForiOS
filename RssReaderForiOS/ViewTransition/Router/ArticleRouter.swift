@@ -6,6 +6,11 @@
 //  Copyright © 2021 shusuke. All rights reserved.
 //
 
+/**
+ * 画面遷移を行うクラス
+ * - 遷移先のViewControllerを生成して画面遷移させるメソッドを記述
+ */
+
 import UIKit
 
 protocol ArticleRouterRrotocol: AnyObject {
