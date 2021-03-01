@@ -8,7 +8,7 @@
 
 /**
  * Routerに対して画面遷移の指示を出すクラス
- * - viewModel, routerを保持
+ * - view, routerを保持
  * - 補足：routerを保持するクラスはViewControllerでも良い
  */
 
