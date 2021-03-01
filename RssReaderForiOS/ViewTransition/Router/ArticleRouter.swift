@@ -32,6 +32,7 @@ extension ArticleRouter {
         let s = UIStoryboard(name: "ArticleDetailViewController", bundle: nil)
         let vc = s.instantiateInitialViewController() as! ArticleDetailViewController
         vc.article = article
+        /* 遷移先にpresenterがあればココに追加する */
         self.view.pushViewController(vc, animated: true)
     }
 }
