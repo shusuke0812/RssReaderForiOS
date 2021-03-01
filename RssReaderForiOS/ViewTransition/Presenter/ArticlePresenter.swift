@@ -6,20 +6,22 @@
 //  Copyright © 2021 shusuke. All rights reserved.
 //
 
+/**
+ * Routerに対して画面遷移の指示を出すクラス
+ * - viewModel, routerを保持
+ * - 補足：routerを保持するクラスはViewControllerでも良い
+ */
+
 import UIKit
 
 protocol ArticlePresenterProtocol {
-    /// セルの記事情報取得
-    func article(forRow row: Int) -> Item?
     /// TableViewのセルを選択した時の処理
-    func didSelectRow(at indexPath: IndexPath)
+    func didSelectRow(article: Item)
 }
 
 class ArticlePresenter: ArticlePresenterProtocol {
     private weak var view: ArticleViewProtocol!
     private let router: ArticleRouterRrotocol
-    
-    private(set) var articles: [Item] = []
     
     init(view: ArticleViewProtocol, router: ArticleRouterRrotocol) {
         self.view = view
@@ -28,11 +30,7 @@ class ArticlePresenter: ArticlePresenterProtocol {
 }
 // MARK: - Presenter Method
 extension ArticlePresenter {
-    func article(forRow row: Int) -> Item? {
-        return self.articles[row]
-    }
-    func didSelectRow(at indexPath: IndexPath) {
-        guard let article = self.article(forRow: indexPath.row) else { return }
+    func didSelectRow(article: Item) {
         self.router.transitionToArticleDetail(article: article)
     }
 }
