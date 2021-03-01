@@ -10,11 +10,16 @@ import UIKit
 import SwiftUI
 import PKHUD
 
+protocol ArticleViewProtocol: Transitioner {
+}
+
 class ArticleViewController: UIViewController {
     /// BaseViewDataSource
     private var dataSource: ArticleBaseView.DataSource = .init()
     /// ViewModel
     private var viewModel: ArticleViewModel!
+    /// Presenter
+    private var presenter: ArticlePresenterProtocol!
     /// note記事取得のリクエスト
     private var request: URLRequest { JsonArticleRequest(noteRss: Common.Api.noteRss).buildURLRequest() }
     
@@ -60,13 +65,10 @@ extension ArticleViewController {
         hostingVC.didMove(toParent: self)
     }
 }
-// MARK: - Page Transition Method
+// MARK: - Presenter Injection Method
 extension ArticleViewController {
-    private func transitionArticleDetailPage(article: Item) {
-        let s = UIStoryboard(name: "ArticleDetailViewController", bundle: nil)
-        let vc = s.instantiateInitialViewController() as! ArticleDetailViewController
-        vc.article = article
-        self.navigationController?.pushViewController(vc, animated: true)
+    func inject(presenter: ArticlePresenterProtocol) {
+        self.presenter = presenter
     }
 }
 // MARK: - API Method
@@ -91,8 +93,8 @@ extension ArticleViewController: ArticleViewModelDelegate {
     }
 }
 // MARK: - BaseView Delegate Method
-extension ArticleViewController: ArticleBaseViewDelegate {
+extension ArticleViewController: ArticleBaseViewDelegate, ArticleViewProtocol {
     func didTapCell() {
-        self.transitionArticleDetailPage(article: self.viewModel.articles[dataSource.listIndex])
+        self.presenter.didSelectRow(article: self.viewModel.articles[dataSource.listIndex])
     }
 }
