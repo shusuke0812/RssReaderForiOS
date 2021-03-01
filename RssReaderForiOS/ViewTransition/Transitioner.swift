@@ -7,7 +7,7 @@
 //
 
 /**
- * 画面遷移メソッドのプロトコル
+ * UIViewControllerが本来持っていた画面遷移メソッドのプロトコル
  */
 
 import UIKit
@@ -28,7 +28,7 @@ extension Transitioner {
     func present(_ viewController: UIViewController, animated: Bool, completion: (() -> ())?) {
         present(viewController, animated: animated, completion: completion)
     }
-    func dissmiss(animated: Bool) {
+    func dismiss(animated: Bool) {
         dismiss(animated: animated)
     }
 }
