@@ -20,7 +20,9 @@ noteの記事をRSSで取得して表示するアプリ（SwiftUI + UIkit）
 ### 設計パターン
 - MVVM + SwiftUI
 - ViewのみSwiftUIを使用し、それ以外はUIKitで構成（ただし、詳細画面のWebViewはUIKit）
-<img width="600" src="https://user-images.githubusercontent.com/33107697/107774590-8cc79c00-6d82-11eb-8377-1ef7202e8163.png">
+- 画面遷移はViewControllerから切り離してRouterで行う
+  - 【メモ】Presenterはプレゼンテーションロジックを担うクラスで、routerを保持しイベントの種類によってRoutingする。ただし、上記の設計だとViewControllerでrouterを保持しても良いかもしれない。  
+<img width="500" src="README_Image/architecture_mvvm-router.png">
   
 ### RSS取得方法
 - `https://note.com/(著者URL)/`の最後にrssをつける → `https://note.mu/(著者URL)/rss`
@@ -62,7 +64,7 @@ noteの記事をRSSで取得して表示するアプリ（SwiftUI + UIkit）
 ```
 
 ## 参考文献
-- 田中賢治、iOSアプリ設計パターン入門、2018年12月26日 初版第1刷発行、pp.111-126
+- 田中賢治、iOSアプリ設計パターン入門、2018年12月26日 初版第1刷発行、pp.111-126, pp215-221
 - 金田浩明、SwiftUI徹底入門、2019年12月30日 初版第1刷発行
 - [クックパッド開発者ブログ：SwiftUIを活用した「レシピ」×「買い物」の新機能開発](https://techlife.cookpad.com/entry/2021/01/18/kaimono-swift-ui)
 
