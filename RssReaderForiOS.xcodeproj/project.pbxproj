@@ -140,36 +140,15 @@
 			children = (
 				9C31BF4825EC6AF700C7F1BE /* ViewTransition */,
 				9C09CF0424FB8D37007E2EB9 /* Static */,
-				9C885BBE24F8EFB500886057 /* ViewModel */,
-				9C885BBD24F8EEC800886057 /* View */,
 				9C3C2AA824F791740083869C /* Repository */,
 				9C3C2AA524F782650083869C /* Entity */,
-				9C7EA47424D93A360009197F /* Storyboard */,
-				9C7EA47324D93A2B0009197F /* ViewController */,
+				9C8937DC274B12B3009ABD11 /* Screen */,
 				9C7EA45F24D937600009197F /* AppDelegate.swift */,
 				9C7EA46824D937640009197F /* Assets.xcassets */,
 				9C7EA46A24D937640009197F /* LaunchScreen.storyboard */,
 				9C7EA46D24D937640009197F /* Info.plist */,
 			);
 			path = RssReaderForiOS;
-			sourceTree = "<group>";
-		};
-		9C7EA47324D93A2B0009197F /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9C7EA46324D937600009197F /* ArticleViewController.swift */,
-				9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		9C7EA47424D93A360009197F /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				9C7EA46524D937600009197F /* ArticleViewController.storyboard */,
-				9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		9C7EA47524D93D270009197F /* TableViewCell */ = {
@@ -195,6 +174,51 @@
 				9C09CF0224FB8AD0007E2EB9 /* ArticleViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C8937DC274B12B3009ABD11 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9C8937DE274B12D8009ABD11 /* ArticleDetail */,
+				9C8937DD274B12CF009ABD11 /* Article */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		9C8937DD274B12CF009ABD11 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				9C8937DF274B12F3009ABD11 /* ViewController */,
+				9C885BBD24F8EEC800886057 /* View */,
+				9C885BBE24F8EFB500886057 /* ViewModel */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		9C8937DE274B12D8009ABD11 /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9C8937E0274B1305009ABD11 /* ViewController */,
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		9C8937DF274B12F3009ABD11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7EA46524D937600009197F /* ArticleViewController.storyboard */,
+				9C7EA46324D937600009197F /* ArticleViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9C8937E0274B1305009ABD11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7EA47C24D9456B0009197F /* ArticleDetailViewController.storyboard */,
+				9C7EA47A24D945510009197F /* ArticleDetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9C9B0A1F25CCF85400DE74B1 /* Request */ = {
