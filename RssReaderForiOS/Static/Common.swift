@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Common {
+enum Common {
     /// APIのパス
-    struct Api {
+    enum Api {
         // note記事RSSフィードのURL（著者：`かっくん`さん）
-        internal static let noteRss: String = "https://note.com/fromkk/rss"
+        static let noteRss: String = "https://note.com/fromkk/rss"
     }
     /// ProgressViewの状態
-    struct ProgressViewStatus {
-        internal static let isLoading: String = "loading"
-        internal static let estimatedProgress: String = "estimated"
+    enum ProgressViewStatus {
+        static let isLoading: String = "loading"
+        static let estimatedProgress: String = "estimated"
     }
 }
 
