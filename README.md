@@ -2,9 +2,9 @@ noteの記事をRSSで取得して表示するアプリ（SwiftUI + UIkit）
 ====
 　
 ## 開発環境
-- Xcode version 12.0
+- Xcode version 13.0 (13A233)
 - pod version 1.9.1
-- MacOS Catalina version 10.15.4
+- MacOS BigSur version 11.4
 
 ## 概要
 ### 背景と目的
