@@ -14,6 +14,11 @@ protocol ArticlesRepositoryProtocol {
     ///   - request: note記事のリクエスト
     ///   - completion: 完了時の処理
     func getArticles(request: URLRequest, completion: @escaping (Result<[Item], Error>) -> Void)
+    /// Note記事を取得する
+    /// - Parameters:
+    ///   - request: note記事のリクエスト
+    ///   - completion: 完了時の処理
+    func getArticles(requestRssUrl: URL, completion: @escaping (Result<[String], Error>) -> Void)
 }
 /// Note記事のRSSを取得するクラス
 class ArticlesRepository: ArticlesRepositoryProtocol {
@@ -39,6 +44,26 @@ extension ArticlesRepository {
             }
             completion(.success(article.items))
         })
+        task.resume()
+    }
+    func getArticles(requestRssUrl: URL, completion: @escaping (Result<[String], Error>) -> Void) {
+        let task = URLSession.shared.dataTask(with: requestRssUrl) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            guard let data = data else {
+                completion(.failure(NetworkError.unknown))
+                return
+            }
+
+            let xmlParseHelper = XMLParseHelper(data: data)
+            xmlParseHelper.onSuccess = { titles in
+                completion(.success(titles))
+            }
+            xmlParseHelper.onError = { error in
+                completion(.failure(error))
+            }
+        }
         task.resume()
     }
 }
