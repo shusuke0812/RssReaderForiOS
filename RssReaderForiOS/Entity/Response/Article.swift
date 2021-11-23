@@ -31,22 +31,19 @@ struct Item: Codable {
     let title: String
     let pubDate: String
     let link: String
-    let author: String
     let description: String
     
     enum CodingKeys: String, CodingKey {
         case title
         case pubDate
-        case author
         case link
         case description
     }
     
-    init(title: String, pubDate: String, link: String, author: String, description: String) {
+    init(title: String, pubDate: String, link: String, description: String) {
         self.title = title
         self.pubDate = pubDate
         self.link = link
-        self.author = author
         self.description = description
     }
 }
