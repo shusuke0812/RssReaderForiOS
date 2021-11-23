@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ArticleViewModelDelegate: class {
+protocol ArticleViewModelDelegate: AnyObject{
     /// note記事の取得に成功した
     func didSuccessGetArticles()
     /// note記事の取得に失敗した
