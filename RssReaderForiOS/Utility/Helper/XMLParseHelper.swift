@@ -25,6 +25,9 @@ class XMLParseHelper: NSObject {
         super.init()
         self.parser?.delegate = self
     }
+    func parse() {
+        parser?.parse()
+    }
 }
 
 // MARK: - XMLParser Delegate
