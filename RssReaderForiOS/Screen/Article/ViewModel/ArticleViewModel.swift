@@ -44,4 +44,15 @@ extension ArticleViewModel {
             }
         })
     }
+    func loadArticles(request: URL) {
+        self.articleRepository.getArticles(requestRssUrl: request) { response in
+            switch response {
+            case .success(let items):
+                print(items)
+            case .failure(let error):
+                print("DEBUG： \(error)")
+                self.delegate?.didFailedGetArticles(errorMessage: "note記事の取得に失敗しました")
+            }
+        }
+    }
 }

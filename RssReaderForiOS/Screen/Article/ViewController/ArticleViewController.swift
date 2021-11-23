@@ -76,7 +76,12 @@ extension ArticleViewController {
     /// note記事一覧を取得する
     private func loadArticles() {
         HUD.show(.progress)
-        self.viewModel.loadArticles(request: request)
+        //self.viewModel.loadArticles(request: request)
+        if let url = URL(string: Common.Api.noteRss) {
+            self.viewModel.loadArticles(request: url)
+        } else {
+            HUD.hide()
+        }
     }
 }
 // MARK: - ViewModel Delegate Method
