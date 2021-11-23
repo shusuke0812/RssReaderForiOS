@@ -25,7 +25,6 @@ class XMLParseHelper: NSObject {
         super.init()
         self.parser?.delegate = self
     }
-    
 }
 
 // MARK: - XMLParser Delegate
@@ -41,7 +40,7 @@ extension XMLParseHelper: XMLParserDelegate {
         checkElement = elementName
     }
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if string != "\n" {
+        if !string.contains("\n")  {
             if checkElement == "title" {
                 items.append(string)
             }
