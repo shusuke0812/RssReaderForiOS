@@ -63,6 +63,7 @@ extension ArticlesRepository {
             xmlParseHelper.onError = { error in
                 completion(.failure(error))
             }
+            xmlParseHelper.parse()
         }
         task.resume()
     }
