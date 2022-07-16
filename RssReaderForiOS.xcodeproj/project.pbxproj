@@ -27,6 +27,7 @@
 		9C9B0A2825CD02A100DE74B1 /* JsonArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B0A2725CD02A100DE74B1 /* JsonArticleRequest.swift */; };
 		9C9CBF6F274CB1B4002348B5 /* XMLParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CBF6E274CB1B4002348B5 /* XMLParseHelper.swift */; };
 		9CA6F2CB253FEF800043F9E9 /* ArticleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */; };
+		9CBAC0B72882E223007AD29A /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAC0B62882E223007AD29A /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		9C9B0A2725CD02A100DE74B1 /* JsonArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonArticleRequest.swift; sourceTree = "<group>"; };
 		9C9CBF6E274CB1B4002348B5 /* XMLParseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParseHelper.swift; sourceTree = "<group>"; };
 		9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBaseView.swift; sourceTree = "<group>"; };
+		9CBAC0B62882E223007AD29A /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RssReaderForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			children = (
 				9C9B0A2025CCF85C00DE74B1 /* Response */,
 				9C9B0A1F25CCF85400DE74B1 /* Request */,
+				9CBAC0B62882E223007AD29A /* JSON.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				9C9B0A2825CD02A100DE74B1 /* JsonArticleRequest.swift in Sources */,
 				9C7EA47B24D945510009197F /* ArticleDetailViewController.swift in Sources */,
 				9C9CBF6F274CB1B4002348B5 /* XMLParseHelper.swift in Sources */,
+				9CBAC0B72882E223007AD29A /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
