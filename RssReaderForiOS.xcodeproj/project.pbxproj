@@ -28,6 +28,7 @@
 		9C9CBF6F274CB1B4002348B5 /* XMLParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CBF6E274CB1B4002348B5 /* XMLParseHelper.swift */; };
 		9CA6F2CB253FEF800043F9E9 /* ArticleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */; };
 		9CBAC0B72882E223007AD29A /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAC0B62882E223007AD29A /* JSON.swift */; };
+		9CBAC0B92882E9E7007AD29A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAC0B82882E9E7007AD29A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		9C9CBF6E274CB1B4002348B5 /* XMLParseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParseHelper.swift; sourceTree = "<group>"; };
 		9CA6F2CA253FEF800043F9E9 /* ArticleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBaseView.swift; sourceTree = "<group>"; };
 		9CBAC0B62882E223007AD29A /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		9CBAC0B82882E9E7007AD29A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B8BA072C328A6064B50C43CD /* Pods_RssReaderForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RssReaderForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				9C9B0A2025CCF85C00DE74B1 /* Response */,
 				9C9B0A1F25CCF85400DE74B1 /* Request */,
 				9CBAC0B62882E223007AD29A /* JSON.swift */,
+				9CBAC0B82882E9E7007AD29A /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				9C3C2AA724F78A8B0083869C /* Article.swift in Sources */,
 				9C7EA47824D93D750009197F /* ArticleCell.swift in Sources */,
 				9C7EA46024D937600009197F /* AppDelegate.swift in Sources */,
+				9CBAC0B92882E9E7007AD29A /* User.swift in Sources */,
 				9C09CF0324FB8AD0007E2EB9 /* ArticleViewModel.swift in Sources */,
 				9C31BF4A25EC6B6F00C7F1BE /* Transitioner.swift in Sources */,
 				9C09CF0624FB92BD007E2EB9 /* Common.swift in Sources */,
