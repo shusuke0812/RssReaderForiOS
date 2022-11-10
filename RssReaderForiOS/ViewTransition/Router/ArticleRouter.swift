@@ -14,8 +14,6 @@
 import UIKit
 
 protocol ArticleRouterRrotocol: AnyObject {
-    /// 記事詳細画面に遷移
-    /// - Parameter article: 記事情報
     func transitionToArticleDetail(article: Item)
 }
 

@@ -13,11 +13,8 @@
 import UIKit
 
 protocol Transitioner: UIViewController {
-    /// ナビゲーション遷移
     func pushViewController(_ viewController: UIViewController, animated: Bool)
-    /// モーダル遷移
     func present(_ viewController: UIViewController, animated: Bool, completion: (() -> ())?)
-    /// 画面を閉じる
     func dismiss(animated: Bool)
 }
 extension Transitioner {

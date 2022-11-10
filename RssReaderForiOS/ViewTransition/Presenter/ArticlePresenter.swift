@@ -15,7 +15,6 @@
 import UIKit
 
 protocol ArticlePresenterProtocol {
-    /// TableViewのセルを選択した時の処理
     func didSelectRow(article: Item)
 }
 
