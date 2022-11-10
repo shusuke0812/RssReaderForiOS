@@ -14,13 +14,9 @@ protocol ArticleViewProtocol: Transitioner {
 }
 
 class ArticleViewController: UIViewController {
-    /// BaseViewDataSource
     private var dataSource: ArticleBaseView.DataSource = .init()
-    /// ViewModel
     private var viewModel: ArticleViewModel!
-    /// Presenter
     private var presenter: ArticlePresenterProtocol!
-    /// note記事取得のリクエスト
     private var request: URLRequest { JsonArticleRequest(noteRss: Common.Api.noteRss).buildURLRequest() }
     
     // MARK: - Lifecycle Method
@@ -47,12 +43,10 @@ class ArticleViewController: UIViewController {
 }
 // MARK: - Initialized Method
 extension ArticleViewController {
-    // 通知元のdelegateに通知先である自身のクラスを登録
     private func setDelegateDataSource() {
         self.viewModel.delegate = self
     }
     private func setNavigationItem() {
-        // ナビゲーションバーの設定
         self.title = "note記事一覧"
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -73,7 +67,6 @@ extension ArticleViewController {
 }
 // MARK: - API Method
 extension ArticleViewController {
-    /// note記事一覧を取得する
     private func loadArticles() {
         HUD.show(.progress)
         //self.viewModel.loadArticles(request: request)

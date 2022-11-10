@@ -9,10 +9,8 @@
 import Foundation
 
 struct JsonArticleRequest: RssConvertedJsonAPIRequest {
-    /// NoteのRss情報
     let noteRss: String
     
-    // GitHubAPIRequestが要求する連想型
     typealias Resonse = Item
     
     var method: HTTPMethod {

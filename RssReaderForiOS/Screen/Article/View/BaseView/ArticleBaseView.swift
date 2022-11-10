@@ -9,22 +9,18 @@
 import SwiftUI
 
 protocol ArticleBaseViewDelegate: AnyObject {
-    /// セルをタップした時の処理
     func didTapCell()
 }
 struct ArticleBaseView: View {
-    /// ViewModelの値を監視するObserver
     class DataSource: ObservableObject {
         @Published var articles: [Item] = []
         @Published var listIndex: Int = 0
     }
-    /// デリゲート
     weak var delegate: ArticleBaseViewDelegate?
-    /// ViewModelの値を検知して更新する
+
     @ObservedObject var dataSource: DataSource
-    /// テキストフィールドの値
     @State var keyword = ""
-    /// テキストフィールド余白
+
     private let textFieldPaddingSize: CGFloat = 15.0
     
     var body: some View {

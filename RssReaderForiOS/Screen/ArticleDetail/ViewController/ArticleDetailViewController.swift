@@ -13,9 +13,7 @@ import PKHUD
 class ArticleDetailViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    // ProgressView初期化
     private var progressView = UIProgressView(progressViewStyle: .bar)
-    // 遷移元から記事情報を受け取るプロパティ
     var article: Item!
     
     override func viewDidLoad() {
@@ -28,7 +26,6 @@ class ArticleDetailViewController: UIViewController {
 // MARK: - Private Method
 extension ArticleDetailViewController {
     private func setUI() {
-        // ナビゲーションバーの設定
         self.title = "note記事詳細"
     }
     private func setWebView() {

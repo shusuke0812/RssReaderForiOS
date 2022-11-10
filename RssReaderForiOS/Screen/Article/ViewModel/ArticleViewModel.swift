@@ -9,19 +9,13 @@
 import UIKit
 
 protocol ArticleViewModelDelegate: AnyObject{
-    /// note記事の取得に成功した
     func didSuccessGetArticles()
-    /// note記事の取得に失敗した
-    /// - Parameter errorMessage: エラーメッセージ
     func didFailedGetArticles(errorMessage: String)
 }
 
 class ArticleViewModel: NSObject {
-    /// note記事一覧のリポジトリクラス
     private let articleRepository: ArticlesRepositoryProtocol
-    /// note記事一覧
     var articles: [Item] = []
-    /// デリゲート
     internal weak var delegate: ArticleViewModelDelegate?
     
     init(articleRepository: ArticlesRepositoryProtocol) {
@@ -30,8 +24,6 @@ class ArticleViewModel: NSObject {
 }
 
 extension ArticleViewModel {
-    /// note記事を読み込む
-    // TODO: 引数どうすべきか？
     func loadArticles(request: URLRequest) {
         self.articleRepository.getArticles(request: request, completion: { (response) in
             switch response {

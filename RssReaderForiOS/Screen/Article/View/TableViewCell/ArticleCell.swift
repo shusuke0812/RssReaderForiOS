@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct ArticleCell: View {
-    /// 記事タイトル
     var title: String
-    /// 記事発行日
     var pubDate: String
-    /// 最大表示行数
     private let lineLimitNumber: Int = 5
-    /// 余白
     private let paddingSize: CGFloat = 2.0
     
     var body: some View {
